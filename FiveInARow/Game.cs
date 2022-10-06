@@ -61,4 +61,9 @@ public class Game
             }
         }
     }
+
+    private static int GetNextPlayer(int player)
+    {
+        return player.Equals(1) ? 2 : 1;
+    }
 }
