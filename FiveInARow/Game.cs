@@ -157,4 +157,16 @@ public class Game
 
         return (row, col-1);
     }
+
+    private void Mark(int player, int row, int col)
+    {
+        if (player == 1)
+        {
+            Board[row, col] = 1;
+        }
+        else
+        {
+            Board[row, col] = 2;
+        }
+    }
 }
