@@ -14,12 +14,20 @@
             //We are currently not using the gameMode variable 
             var gameMode = Console.ReadLine();
 
+            //Since we are playing 'five in a row' table is set to a 5 by 5 size
+            const int tableRows = 5;
+            const int tableColumns = 5;
+            
             //Game class will be created in the next step
-            Game game = new Game(5, 5);
+            Game game = new Game(tableRows, tableColumns);
             
             Console.Clear();
             
-            game.Play(5);
+            //The argument for the Play method sets the winning condition for how many marks
+            //we need to win the game in a row or column or diagonally
+            const int marksToWin = 5;
+            
+            game.Play(marksToWin);
         }
     }
 }
