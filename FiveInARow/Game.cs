@@ -304,4 +304,20 @@ public class Game
         }
         return true;
     }
+
+    private static void PrintResult(int player = 0)
+    {
+        switch (player)
+        {
+            case 0:
+                Console.WriteLine("It's a tie!");
+                break;
+            case 1:
+                Console.WriteLine("X won!");
+                break;
+            default:
+                Console.WriteLine("O won!");
+                break;
+        }
+    }
 }
