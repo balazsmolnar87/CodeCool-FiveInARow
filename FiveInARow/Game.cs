@@ -95,4 +95,66 @@ public class Game
         }
         Console.WriteLine();
     }
+
+    private (int, int) GetMove(int player)
+    {
+        bool isMoveValid = false;
+
+        int row = 0;
+        int col = 0;
+        
+        const int minColValue = 1;
+        const int minRowValue = 5;
+
+        while (isMoveValid is false)
+        {
+            Console.WriteLine("It is player " + player + "'s turn.");
+            Console.WriteLine("Select a coordinate to place your mark.");
+
+            string move = Console.ReadLine().ToUpper();
+
+            if (move.Length == 0 || move.Length == 1)
+            {
+                Console.WriteLine("A coordinate must be a row letter and a column number!");
+                continue;
+            }
+
+            var rowChar = move[0];
+            col = int.Parse(move.Substring(1));
+
+            // Lets the user quit the game
+            if (move == "QUIT")
+            {
+                Console.Clear();
+                Console.WriteLine("Goodbye!");
+                Thread.Sleep(3000);
+                Environment.Exit(0);
+            }
+            
+            // Check if move is valid
+            else if (move.Length != 2)
+            {
+                Console.WriteLine("A coordinate must be a row letter and a column number!");
+                continue;
+            }
+
+            else if (RowLetters.Contains(rowChar) is false || col is < minColValue or > minRowValue)
+            {
+                Console.WriteLine("Please enter coordinate in a correct format.");
+                continue;
+            }
+
+            row = AbcAscii.IndexOf(move[0]);
+
+            if (Board[row, col-1] == 1 || Board[row, col-1] == 2)
+            {
+                Console.WriteLine("That tile is taken, choose another one!");
+                continue;
+            }
+
+            isMoveValid = true;
+        }
+
+        return (row, col-1);
+    }
 }
