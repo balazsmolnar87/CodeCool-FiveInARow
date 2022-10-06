@@ -289,4 +289,19 @@ public class Game
             return false;
         }
     }
+
+    private bool IsFull()
+    {
+        for (int i = 0; i < Board.GetLength(0); i++)
+        {
+            for (int j = 0; j < Board.GetLength(1); j++)
+            {
+                if (Board[i, j] == 0)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }
