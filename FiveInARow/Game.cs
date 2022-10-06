@@ -74,4 +74,25 @@ public class Game
         Console.WriteLine("Player 2: O");
         Console.WriteLine();
     }
+
+    private void PrintBoard()
+    {
+        Console.WriteLine("  1 2 3 4 5");
+
+        for (var i = 0; i < Board.GetLength(0); i++)
+        {
+            var rowString = AbcAscii[i] + " ";
+            for (var j = 0; j < Board.GetLength(1); j++)
+            {
+                rowString += Board[i, j] switch
+                {
+                    0 => "+ ",
+                    1 => "X ",
+                    _ => "O "
+                };
+            }
+            Console.WriteLine(rowString);
+        }
+        Console.WriteLine();
+    }
 }
