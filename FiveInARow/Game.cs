@@ -169,4 +169,36 @@ public class Game
             Board[row, col] = 2;
         }
     }
+
+    private bool HasWon(int player, int howMany)
+    {
+        for (int i = 0; i < Board.GetLength(0); i++)
+        {
+            for (int j = 0; j < Board.GetLength(1); j++)
+            {
+                if (Board[i, j] != player) continue;
+                bool hasRight = CheckRight(i, j, howMany, player);
+                if (hasRight)
+                {
+                    return true;
+                }
+                bool hasDown = CheckDown(i, j, howMany, player);
+                if (hasDown)
+                {
+                    return true;
+                }
+                bool hasDownLeft = CheckDownLeft(i, j, howMany, player);
+                if (hasDownLeft)
+                {
+                    return true;
+                }
+                bool hasDownRight = CheckDownRight(i, j, howMany, player);
+                if (hasDownRight)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
