@@ -226,5 +226,31 @@ public class Game
         {
             return false;
         }
-    }        
+    }
+
+    private bool CheckDown(int i, int j, int howMany, int player)
+    {
+        int counter = 0;
+
+        try
+        {
+            for (int k = 0; k < howMany; k++)
+            {
+                if (Board[i + k, j] == player)
+                {
+                    counter++;
+                }
+            }
+
+            if (counter == howMany)
+            {
+                return true;
+            }
+            return false;
+        }
+        catch (IndexOutOfRangeException e)
+        {
+            return false;
+        }
+    }
 }
