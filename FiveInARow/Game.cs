@@ -66,4 +66,12 @@ public class Game
     {
         return player.Equals(1) ? 2 : 1;
     }
+
+    private static void PrintTopMessage()
+    {
+        Console.WriteLine("Welcome to five in a row!");
+        Console.WriteLine("Player 1: X");
+        Console.WriteLine("Player 2: O");
+        Console.WriteLine();
+    }
 }
