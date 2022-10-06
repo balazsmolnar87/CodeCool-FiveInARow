@@ -3,15 +3,11 @@
 public class Game
 {
     private int[,] Board { get; }
-    private int _rows;
-    private int _cols;
     private const string AbcAscii = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private const string RowLetters = "ABCDE";
 
     public Game(int nRows, int nCols)
     {
-        _rows = nRows;
-        _cols = nCols;
         Board = new int[nRows, nCols];
 
         for (int i = 0; i < nRows; i++)
@@ -113,7 +109,7 @@ public class Game
 
             string move = Console.ReadLine().ToUpper();
 
-            if (move.Length == 0 || move.Length == 1)
+            if (move.Length is 0 or 1)
             {
                 Console.WriteLine("A coordinate must be a row letter and a column number!");
                 continue;
