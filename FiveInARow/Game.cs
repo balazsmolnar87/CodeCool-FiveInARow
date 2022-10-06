@@ -216,11 +216,7 @@ public class Game
                 }
             }
 
-            if (counter == howMany)
-            {
-                return true;
-            }
-            return false;
+            return counter == howMany;
         }
         catch (IndexOutOfRangeException e)
         {
@@ -242,11 +238,7 @@ public class Game
                 }
             }
 
-            if (counter == howMany)
-            {
-                return true;
-            }
-            return false;
+            return counter == howMany;
         }
         catch (IndexOutOfRangeException e)
         {
@@ -268,11 +260,7 @@ public class Game
                 }
             }
 
-            if (counter == howMany)
-            {
-                return true;
-            }
-            return false;
+            return counter == howMany;
         }
         catch (IndexOutOfRangeException e)
         {
@@ -294,11 +282,7 @@ public class Game
                 }
             }
 
-            if (counter == howMany)
-            {
-                return true;
-            }
-            return false;
+            return counter == howMany;
         }
         catch (IndexOutOfRangeException e)
         {
